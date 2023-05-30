@@ -5,4 +5,8 @@ export default class extends Controller {
   connect() {
     console.log('Hello from toggle controller')
   }
+
+  toggleNewMonumentForm() {
+    console.log("toggling...")
+  }
 }
