@@ -9,4 +9,18 @@ export default class extends Controller {
     console.log(this.itemsTarget)
     console.log(this.formTarget)
   }
+
+  createNewMonumentAJAX(event) {
+    event.preventDefault()
+
+    fetch(this.formTarget.action, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(this.formTarget)
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      })
+  }
 }
