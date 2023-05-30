@@ -15,7 +15,7 @@
   <div data-controller="toggle">
     <button class="btn btn-primary" data-action="click->toggle#toggleNewMonumentForm">Add a new monument</button>
 
-    <div class="mt-4 d-none">
+    <div class="mt-4 d-none" data-toggle-target="togglableElement">
       <%= render 'form', monument: @monument %>
     </div>
   </div>
