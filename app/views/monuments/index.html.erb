@@ -12,6 +12,12 @@
     <% end %>
   </div>
 
-  <%= link_to "New monument", new_monument_path %>
+  <div>
+    <button class="btn btn-primary">Add a new monument</button>
+
+    <div class="mt-4">
+      <%= render 'form', monument: @monument %>
+    </div>
+  </div>
 
 </div>
