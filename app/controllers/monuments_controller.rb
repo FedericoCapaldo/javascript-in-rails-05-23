@@ -24,11 +24,16 @@ class MonumentsController < ApplicationController
   def create
     @monument = Monument.new(monument_params)
 
-    if @monument.save
-      redirect_to @monument, notice: "Monument was successfully created."
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @monument.save
+        format.html { redirect_to @monument, notice: "Monument was successfully created." }
+        format.json # create json through create.json.builder view inside views/monument
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json # create json through create.json.builder view inside views/monument
+      end
     end
+
   end
 
   # PATCH/PUT /monuments/1
